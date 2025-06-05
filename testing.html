@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTMO_SNITCH | Truth Has a Witness</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+    }
+    header {
+      background-color: #1a1a1a;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid red;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: red;
+    }
+    header p {
+      font-style: italic;
+      color: #ccc;
+    }
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    nav a {
+      color: #f2f2f2;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: red;
+    }
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .blog-post {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #444;
+    }
+    .blog-post h2 {
+      color: #f04e4e;
+    }
+    .contact-form label {
+      display: block;
+      margin: 1rem 0 0.25rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: #1a1a1a;
+      border: 1px solid #555;
+      color: #f2f2f2;
+      padding: 0.5rem;
+      font-family: monospace;
+    }
+    .contact-form button {
+      margin-top: 1rem;
+      background: red;
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #333;
+      background: #111;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GTMO_SNITCH</h1>
+    <p>Secrets don’t stay buried. I dig. I drop. You decide.</p>
+  </header>
+
+  <nav>
+    <a href="#blog">Intel Drops</a>
+    <a href="#contact">Message Me</a>
+  </nav>
+
+  <section id="blog">
+    <h2>Latest Intel Drops</h2>
+    <div class="blog-post">
+      <h2>🔍 Code Name: TRUSTFALL</h2>
+      <p>Allegiances are fake. Screenshots are real. Drop incoming on someone you thought was clean...</p>
+    </div>
+    <div class="blog-post">
+      <h2>🔥 What Really Goes Down in GTMO</h2>
+      <p>Most of you think you know. You don’t. But I do. And I’ve got the files...</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Message Me</h2>
+    <form class="contact-form" action="https://formspree.io/f/mnnvnzel" method="POST" id="tipForm">
+      <label for="name">Name or Alias</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="message">Your Message / Tip</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 GTMO_SNITCH — No Loyalty. Only Truth.
+  </footer>
+
+  <script>
+    const form = document.getElementById('tipForm');
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const action = form.getAttribute('action');
+      const response = await fetch(action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      if (response.ok) {
+        alert('Message sent. Truth logged.');
+        form.reset();
+      } else {
+        alert('Something went wrong. Try again.');
+      }
+    });
+  </script>
+</body>
+</html>
