@@ -4,6 +4,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GTMO_SNITCH | Truth Has a Witness</title>
   <style>
+    @keyframes glitch {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  20% {
+    transform: skew(-5deg);
+    opacity: 0.9;
+  }
+  40% {
+    transform: translate(-2px, 2px);
+    opacity: 0.8;
+  }
+  60% {
+    transform: translate(2px, -2px);
+    opacity: 0.85;
+  }
+  80% {
+    transform: skew(3deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.glitch {
+  position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  color: red;
+  animation: glitch 1.5s infinite;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
     body {
       margin: 0;
       font-family: 'Courier New', monospace;
@@ -85,7 +122,6 @@
 </head>
 <body>
   <header>
-    <header>
   <h1 class="glitch">GTMO_SNITCH</h1>
   <p>Secrets don’t stay buried. I dig. I drop. You decide.</p>
 </header>
